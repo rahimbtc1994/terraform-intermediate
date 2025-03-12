@@ -19,3 +19,31 @@ Infrastructure as Code (IaC) is a practice where you manage and provision your c
 3. Server Templating tools (Packer)
 4. Orchestration tools (k8s)
 5. IaC (Terraform)
+
+# Part 2 : Terraform
+
+## What is Terraform
+A tool by hashicorp to build, change and versioning infrastructure safely and efficienty.
+
+## Why Terraform
+Take off all the learnings and best practices in development and apply them to infrastructure (versioning, reviews, documentation)
+
+## Common patterns
+Provisioning + Configuration management tools (Ansible)
+Provisioning + Templating tools (Packer)
+Provisioning + Orchestration tools (K8s)
+
+## Architecture
+
+## Setup 
+1. Install Terraform : https://developer.hashicorp.com/terraform/install
+2. Create AWS account
+3. Install AWS cli : https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+4. Configure AWS cli
+
+## Demo (part-2 folder)
+1. Create a main.tf file 
+2. terraform init
+3. terraform plan
+4. terraform apply
+5. terraform destroy
