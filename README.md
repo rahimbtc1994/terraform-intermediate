@@ -234,7 +234,7 @@ You can pass them directly via module block
 
 ## Demo (part-6)
 
-# Managing multiple envs
+# Part 7 : Managing multiple envs
 
 ## Approaches
 1. Workspaces : multiple tf files in our backend
@@ -277,3 +277,20 @@ You can pass them directly via module block
   6. terraform apply
 
 - why file structure approach is better than worksapces
+
+# Part 8 : Testing
+
+## Code ROT
+1. Out of band changes : GUI
+2. Unpinned versions : forgot tp specify the version of provider
+3. deprecated denpendencies
+4. Unapplied changes
+
+## Testing types
+1. Static
+   - terraform fmt : format
+   - terraform validate : check input variables
+   - terraform plan : compare desired state vs actual state
+   - external : tflint, terrascan, checkov ...
+2. Manual testing (normal operations)
+3. Automated : script.sh, terratest (.go)
