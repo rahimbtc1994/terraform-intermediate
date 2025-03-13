@@ -206,4 +206,28 @@ To improve code even further
 ## Provisioners
 Allows you to perform some actions locally/remotely 
 
+# Part 6 : Modules
+Organizing project to make the code reusable 
 
+## Module 
+Is a container for multiple resources that are used together,
+A collections of .tf and/or .tf.json files in a directory
+A main way to package and reuse resources
+
+## Why
+1. Instead of writing the same configuration multiple times, you can package it into a module and reuse it across different environments (e.g., dev, staging, production).
+2. Modules hide complex infrastructure logic behind a simple interface, making it easier to work with large or complicated architectures.
+3. Changes can be made in one module and propagated wherever it's used, simplifying updates and maintenance.
+4. Modular code can handle growing infrastructure without becoming unmanageable.
+
+## Types 
+- Root module
+- Child module
+
+## Sources
+- Locally
+- Terrafom registry
+- Github (https, ssh, generic)
+
+## Input vars
+You can pass them directly via module block
