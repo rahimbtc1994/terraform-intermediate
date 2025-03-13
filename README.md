@@ -112,3 +112,28 @@ Web-App Generic web application architecture including:
 - RDS instance
 - Load balancer
 - Route 53 DNS config
+
+![Alt text](assets/architecture.png)
+
+Steps :
+1. Add the remote backend (aws s3)
+2. Configure the region
+3. Add the (EC2) instances 
+4. Add a file storage (S3)
+5. Add a VPC (if you don't want to configure a new vpc just refence the default)
+6. Add a Subnet (if you don't want to configure a new Subnet just refence the default)
+7. Define some security groups to allow inbound traffic using security group rules
+8. Setup a loadbalancer listener
+9. Define a loadbalancer target
+10. Attach the EC2 instances to loadbalancer target
+11. Setup a loadbalancer listener rule
+12. Define some security groups for the loadbalancer using security group rules (ingress, egress)
+13. Define the loadbalancer
+14. Setup a Route53 to use an actual domain + a Route53 records
+15. Create a db instance (RDS)
+
+Take action:
+- terraform init
+- terraform plan
+- terraform apply
+- terraform destroy
