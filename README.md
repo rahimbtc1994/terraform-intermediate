@@ -137,3 +137,48 @@ Take action:
 - terraform plan
 - terraform apply
 - terraform destroy
+
+# Part 4 : Variables & Outputs
+
+## Variable types
+1. Input variables, access : var.<name>
+   ex : variable "instance_type" {
+    description = "ec 2 insatance type"
+    type        = string
+    default     = "t2.micro"
+   }
+
+2. Local variables, access : local.<name>
+   ex : locals {
+    service = "My service"
+    owner   = "DevOps btc"
+   }
+
+3. Output variables, why ? 
+   ex : output "instance_ip_addr" {
+    value = aws_instance.instance.public_ip
+   }
+
+## Setting Input vars
+Lowest -> highest
+- Manual entry during plan/apply
+- Default value in declaration block
+- TF_VAR_<name> env var
+- terraform.tvars file
+- *auto.tfvars file
+- Command line -var or -var-file
+
+## Types & validation
+- string,number,bool 
+- list(<attr name>),set(<attr name>),map(<attr name>),object({<attr name> = <type>, ... }), tuple([<attr name>])
+- type : auto , custom conditions
+
+## Sensitive data handling
+1. Mark var as sensitive : Sensitive : true
+2. Pass to terraform apply : TF_VAR_<name>, -var 
+3. Use external secret store : AWS secrets manager
+
+plan,apply will hide them
+
+## Demo (part-4)
+
