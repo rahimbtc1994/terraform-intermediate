@@ -181,4 +181,7 @@ Lowest -> highest
 plan,apply will hide them
 
 ## Demo (part-4)
-
+1. variables.tf
+2. terraform.tfvars
+3. another-terraform.tfvars : we to explicitly tell terraform when apply like : terraform apply -var-file=path/to/anoter/file
+4. another way for sensitive data : terraform apply -var="db_user=myuser" ...
