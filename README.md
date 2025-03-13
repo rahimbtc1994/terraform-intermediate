@@ -231,3 +231,5 @@ A main way to package and reuse resources
 
 ## Input vars
 You can pass them directly via module block
+
+## Demo (part-6)
