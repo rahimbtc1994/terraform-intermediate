@@ -47,3 +47,57 @@ Provisioning + Orchestration tools (K8s)
 3. terraform plan
 4. terraform apply
 5. terraform destroy
+
+# Part 3 : Terraform basics
+
+## Terraform providers
+Terraform has many providers (for different cloud platforms)
+
+## Terraform init
+- Download terraform provider
+- Work directory :
+  - .terraform
+    - providers
+      - registry.trraform.io
+        - hashicorp
+          - aws
+            - os-arch
+              - version
+- Lock file : infos about installed dependencies
+
+## Terraform plan/apply
+- State file : 
+  - tf reprenstation of the world (desired state), 
+  - infos about deployed resources/data/objects
+  - may contains sensitive data
+  - can be stored locally or remotely
+
+## Local backend
++ simple
+- sensitive infos in plaintext
+- uncollabortive
+- manual
+
+## Remote backend
++ sensitive inffos encryption
++ collaboration
++ automation
+- complexity
+
+## Terraform plan
+1. compare the desired state with terraform/actual state
+2. if something is found, it will notify ops and prepare actions to do to get to the desired state
+3. then you  can do terraform apply
+
+## Terraform destroy
+To clean everything (in learning only)
+
+## Remote backend : Terraform cloud / AWS S3
+1. create a terraform cloud account
+2. using aws s3 bucket + dynamodb for colab (chicken - egg problem)
+   1. Bootstraping 1 : provision backend resources and then import them into our configuration
+    - define the resources (s3 + dynamodb)
+    - terraform apply
+   2. Bootstraping 2 : configure a remote backend with the desired infrastructure
+    - terraform init
+    - terraform apply
