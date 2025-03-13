@@ -253,3 +253,27 @@ You can pass them directly via module block
   * Referencing resources ...
 
 ## Terragrunt (to see)
+
+## Demo (part-7)
+
+- Workspaces : initialy we have the main.tf file with a var 
+  locals {
+    environment_name = terraform.workspace
+  }
+   1. terraform init
+   2. terraform workspace list
+   3. terraform workspace new production
+   4. terraform workspace list
+   5. terraform apply
+   6. terraform workspace new staging
+   7. terraform workspace production
+   
+- file structure
+  1. cd global
+  2. terraform init
+  3. terraform deploy
+  4. cd production
+  5. terraform init
+  6. terraform apply
+
+- why file structure approach is better than worksapces
