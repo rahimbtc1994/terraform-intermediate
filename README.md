@@ -97,7 +97,18 @@ To clean everything (in learning only)
 2. using aws s3 bucket + dynamodb for colab (chicken - egg problem)
    1. Bootstraping 1 : provision backend resources and then import them into our configuration
     - define the resources (s3 + dynamodb)
+    - terraform init
+    - terraform plan
     - terraform apply
    2. Bootstraping 2 : configure a remote backend with the desired infrastructure
+    - Uncomment the remote backend configuration
     - terraform init
     - terraform apply
+
+## Demo (part-3)
+Web-App Generic web application architecture including:
+- EC2 instances
+- S3 bucket
+- RDS instance
+- Load balancer
+- Route 53 DNS config
