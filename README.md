@@ -185,3 +185,25 @@ plan,apply will hide them
 2. terraform.tfvars
 3. another-terraform.tfvars : we to explicitly tell terraform when apply like : terraform apply -var-file=path/to/anoter/file
 4. another way for sensitive data : terraform apply -var="db_user=myuser" ...
+
+# Part 5 : Additional language features
+To improve code even further
+
+## See the Docs
+1. conditions
+2. loops
+3. functions
+
+## Meta-args
+1. depends_on (define an order)
+2. count (create multiple instances/copies)
+3. foreach (create multiple copies + some control)
+4. lifecycle (have some control on specific resources)
+    - create_before_destroy : zero downtime deployment
+    - ignore_changes : 
+    - prevent_destroy : 
+
+## Provisioners
+Allows you to perform some actions locally/remotely 
+
+
