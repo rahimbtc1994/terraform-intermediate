@@ -233,3 +233,23 @@ A main way to package and reuse resources
 You can pass them directly via module block
 
 ## Demo (part-6)
+
+# Managing multiple envs
+
+## Approaches
+1. Workspaces : multiple tf files in our backend
+  + easy
+  + convient
+  + minimize code
+  - prone to humain errors
+  - state in the same backend
+2. File Structure : different sub-directories
+  + ioslation of backend (security + less errors)
+  + codebase represents the deployed state
+  - code duplication
+  - multiple tf apply required to provision env
+  * Further separation useful for larger projects
+  * isolate things that change frequently
+  * Referencing resources ...
+
+## Terragrunt (to see)
