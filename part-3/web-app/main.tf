@@ -177,12 +177,12 @@ resource "aws_lb_listener_rule" "instances" {
 
 # 13. Setup a Route53 to use an actual domain + a Route53 records
 resource "aws_route53_zone" "primary" {
-  name = "devopsdeployed.com"
+  name = "terraformbtc.duckdns.org" # TODO 
 }
 
 resource "aws_route53_record" "root" {
   zone_id = aws_route53_zone.primary.zone_id
-  name    = "devopsdeployed.com"
+  name    = "terraformbtc.duckdns.org" # TODO 
   type    = "A"
 
   alias {
@@ -194,20 +194,15 @@ resource "aws_route53_record" "root" {
 
 # 14. Create a db instance
 resource "aws_db_instance" "db_instance" {
-  allocated_storage = 20
-  # This allows any minor version within the major engine_version
-  # defined below, but will also result in allowing AWS to auto
-  # upgrade the minor version of your DB. This may be too risky
-  # in a real production environment.
-  auto_minor_version_upgrade = true
-  storage_type               = "standard"
-  engine                     = "postgres"
-  engine_version             = "8.0"
-  instance_class             = "db.t2.micro"
-  db_name                    = "mydb"
-  username                   = "foo"
-  password                   = "foobarbaz"
-  skip_final_snapshot        = true
+  allocated_storage    = 10
+  name                 = "mydb"
+  engine               = "mysql"
+  engine_version       = "8.0"
+  instance_class       = "db.t3.micro"
+  username             = "foo"
+  password             = "foobarbaz"
+  parameter_group_name = "default.mysql8.0"
+  skip_final_snapshot  = true
 }
 
 # 15. Add a file storage (S3)
