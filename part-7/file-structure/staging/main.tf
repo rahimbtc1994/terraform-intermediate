@@ -2,7 +2,7 @@ terraform {
   # Assumes s3 bucket and dynamo DB table already set up
   # See /code/part-3/aws-backend
   backend "s3" {
-    bucket         = "devops-directive-tf-state"
+    bucket         = "terraform-intermidate-state"
     key            = "part-7/staging/terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "terraform-state-locking"

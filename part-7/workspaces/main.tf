@@ -2,7 +2,7 @@ terraform {
   # Assumes s3 bucket and dynamo DB table already set up
   # See /code/03-basics/aws-backend
   backend "s3" {
-    bucket         = "devops-directive-tf-state"
+    bucket         = "terraform-intermidate-state"
     key            = "part-7/workspaces/terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "terraform-state-locking"
@@ -35,7 +35,7 @@ module "web_app" {
   source = "../../part-6/web-app-module"
 
   # Input Variables
-  bucket_prefix    = "web-app-data-${local.environment_name}"
+  bucket_prefix    = "terraform-intermediate-web-app-data-${local.environment_name}"
   domain           = "devopsdeployed.com"
   environment_name = local.environment_name
   instance_type    = "t2.micro"

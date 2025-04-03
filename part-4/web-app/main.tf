@@ -2,8 +2,8 @@ terraform {
   # Assumes s3 bucket and dynamo DB table already set up
   # See /code/03-basics/aws-backend
   backend "s3" {
-    bucket         = "devops-directive-tf-state"
-    key            = "04-variables-and-outputs/web-app/terraform.tfstate"
+    bucket         = "terraform-intermidate-state"
+    key            = "part-4/web-app/terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "terraform-state-locking"
     encrypt        = true
@@ -205,12 +205,12 @@ resource "aws_route53_record" "root" {
 
 resource "aws_db_instance" "db_instance" {
   allocated_storage    = 10
-  name                 = "mydb"
   engine               = "mysql"
   engine_version       = "8.0"
   instance_class       = "db.t3.micro"
-  username             = "foo"
-  password             = "foobarbaz"
+  name                 = var.db_name
+  username             = var.db_user
+  password             = var.db_pass
   parameter_group_name = "default.mysql8.0"
   skip_final_snapshot  = true
 }

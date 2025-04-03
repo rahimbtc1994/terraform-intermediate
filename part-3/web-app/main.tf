@@ -207,6 +207,6 @@ resource "aws_db_instance" "db_instance" {
 
 # 15. Add a file storage (S3)
 resource "aws_s3_bucket" "bucket" {
-  bucket_prefix = "devops-directive-web-app-data"
+  bucket_prefix = "terraform-intermidate-web-app-data"
   force_destroy = true
 }
